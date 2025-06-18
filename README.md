@@ -1,8 +1,8 @@
 # my-cicd-app
 Lets build a simple CI/CD pipeline using GitHub Actions to:
 
-    Build your app
-
+    Build your app and run locally
+    
     Run tests
 
     Build and push a Docker image
