@@ -27,7 +27,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-return "Hello, CI/CD!"
+    return "Hello, CI/CD!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
 
 Press Ctrl+O, then Enter to save, and Ctrl+X to exit.
 
@@ -80,9 +84,14 @@ my-cicd-app/
 
 6. 🚀 Test Locally (optional)
 
+(im on a system where python3 is the correct command)
+
 If you want to try it locally:
 
 pip install -r requirements.txt
-python app/main.py
+python3 app/main.py
 
-Then open a browser at http://localhost:5000
+You should now see output like:
+
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * or open a browser at http://localhost:5000
