@@ -75,11 +75,17 @@ CMD ["python", "app/main.py"]
 You should now have this:
 
 my-cicd-app/
+
 ├── app/
+
 │   └── main.py
+
 ├── tests/
+
 │   └── test_app.py
+
 ├── Dockerfile
+
 └── requirements.txt
 
 6. 🚀 Test Locally (optional)
