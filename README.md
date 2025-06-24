@@ -1,51 +1,90 @@
-# my-cicd-app
-Lets build a simple CI/CD pipeline using GitHub Actions to:
+# 🚀 my-cicd-app
 
-  1.  Build your app and run locally
-    ![Screenshot from 2025-06-20 11-27-26](https://github.com/user-attachments/assets/3e0d1008-fba2-4a58-9921-0e32bf32a6da)
+This project demonstrates a **simple CI/CD pipeline** using **GitHub Actions** to automatically build, test, and deploy a Python (Flask) application inside a Docker container.
 
-  2. Run test Tests your app automatically
+---
 
-   It runs your Python test file to make sure the app doesn’t crash or return wrong results.
+## 📦 What This Pipeline Does
 
-   ✅ This helps you avoid bugs and mistakes before your app gets deployed.
-  
- 3. Builds a Docker image
+### 1. ✅ Build & Run the App Locally
 
-   Your app is packaged into a Docker container — like a self-contained mini computer that has:
+You can run the app locally with Flask. Example:
 
-   Your app
+![Local App Running](https://github.com/user-attachments/assets/3e0d1008-fba2-4a58-9921-0e32bf32a6da)
 
-   Python
+---
 
-   Flask
+### 2. 🧪 Run Automated Tests
 
-   Any libraries it needs
+Before deployment, the pipeline:
 
-✅ This makes sure it runs exactly the same everywhere — your laptop, a server, or the cloud.
+- Runs Python unit tests (with `pytest`)
+- Ensures the app doesn't crash and returns expected results
 
-  4. Build and push a Docker image
+✅ Helps catch bugs before pushing broken code into production.
 
-      Your app’s Docker image gets uploaded there under your account:
-   🔗 macaroniwdcheese/my-cicd-app:latest
+---
 
-  6. Trigger on main branch commits
-   
-  7. (Optional next step): Deploy it
+### 3. 🐳 Build a Docker Image
 
-   Once your image is in DockerHub, you can deploy it to a real server or cloud like:
+The pipeline packages your app into a Docker image containing:
 
-   Azure
+- Your application code
+- Python runtime
+- Flask and required libraries
 
-   AWS
+✅ This guarantees it runs identically on any machine or cloud.
 
-   Google Cloud
+---
 
-   A Raspberry Pi
+### 4. ☁️ Push to DockerHub
 
-   Any Linux server with Docker
+Your Docker image is pushed to your DockerHub account:
 
-  8. Notify you on success/failure (via email or Slack)
+🔗 `macaroniwdcheese/my-cicd-app:latest`
 
+---
 
+### 5. 🚀 Trigger on Main Branch Commits
 
+The pipeline runs automatically **on every push to the `main` branch** — no manual work needed.
+
+---
+
+### 6. 🌍 (Optional) Deploy to Any Environment
+
+Once your image is in DockerHub, you can deploy it to:
+
+- **Azure**, **AWS**, or **Google Cloud**
+- **Raspberry Pi**
+- Any server with Docker installed
+
+---
+
+### 7. 🔔 Notifications (Optional)
+
+You can also add email or Slack notifications to alert you of:
+
+- ✅ Successful builds
+- ❌ Failed tests or builds
+
+---
+
+## 💡 Technologies Used
+
+- GitHub Actions
+- Python 3.11
+- Flask
+- Pytest
+- Docker & DockerHub
+
+---
+
+## 🧰 How to Run Locally
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python3 app/main.py
