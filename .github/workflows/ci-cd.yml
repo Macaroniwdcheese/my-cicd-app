@@ -48,6 +48,10 @@ jobs:
         echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
     - name: Run tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}
       run: |
+
         pytest tests/
+
 
