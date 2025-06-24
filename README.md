@@ -92,3 +92,6 @@ pip install -r requirements.txt
 
 # Run the app
 python3 app/main.py
+
+
+Then open http://localhost:5000 in your browser.
