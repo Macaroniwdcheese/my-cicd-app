@@ -41,7 +41,8 @@ jobs:
         context: .
         push: true
         tags: macaroniwdcheese/my-cicd-app:latest
-        - name: Install dependencies
+      
+    - name: Install dependencies
       run: |
         pip install -r requirements.txt
         echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
