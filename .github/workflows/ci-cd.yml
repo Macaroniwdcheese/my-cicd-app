@@ -21,8 +21,12 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+        echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
     - name: Run tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+      working-directory: ${{ github.workspace }}
       run: |
         pytest tests/
 
@@ -41,17 +45,3 @@ jobs:
         context: .
         push: true
         tags: macaroniwdcheese/my-cicd-app:latest
-      
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
-
-    - name: Run tests
-      env:
-        PYTHONPATH: ${{ github.workspace }}
-      run: |
-
-        pytest tests/
-
-
